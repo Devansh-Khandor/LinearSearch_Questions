@@ -1,0 +1,48 @@
+//SEARCH IN AN ARRAY FOR A NUMBER BUT ONLY BETWEEN A SPECIFIED RANGE OF INDEX
+
+import java.util.*;
+class Search_In_Range
+{
+    public static void main()
+    {
+        Scanner ob=new Scanner(System.in);
+        System.out.println("Enter the number of elements in the array");
+        int n=ob.nextInt();
+        int arr[]=new int[n];
+        for(int i=0;i<n;i++)
+        {
+            System.out.print("ENTER ELEMENT "+(i+1)+" :");
+            arr[i]=ob.nextInt();
+        }
+        System.out.println("Enter the element to be searched");
+        int find=ob.nextInt();
+        System.out.println("Enter the low limit index");
+        int low=ob.nextInt();
+        System.out.println("Enter the high limit index");
+        int high=ob.nextInt();
+        boolean result=search(arr,find,low,high);
+        if(result==false)
+        {
+            System.out.println("DOESN'T EXIST IN THE STRING");
+        }
+        else
+        {
+            System.out.println("PRESENT IN THE STRING");
+        }
+    }
+    public static boolean search(int arr[],int find,int low,int high)
+    {
+        if(low<0 || high>arr.length-1)
+        {
+            return false;
+        }
+        for(int i=low;i<=high;i++)
+        {
+            if(arr[i]==find)
+            {
+               return true; 
+            }
+        }
+        return false;
+    }
+}
