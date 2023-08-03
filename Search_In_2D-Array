@@ -1,0 +1,48 @@
+//Search for an element in a 2-D Array
+
+
+import java.util.*;
+class Search_In_2DArray
+{
+    public static void main()
+    {
+        Scanner ob=new Scanner(System.in);
+        System.out.println("ENTER THE DIMENSIONS OF THE 2-D ARRAY IN THE FORMAT AxB");
+        System.out.print("ENTER A: ");
+        int a=ob.nextInt();
+        System.out.print("ENTER B: ");
+        int b=ob.nextInt();
+        int arr[][]=new int[a][b];
+        for(int i=0;i<a;i++)
+        {
+            for(int j=0;j<b;j++)
+            {
+                System.out.print("ENTER ["+(i)+"] ["+(j)+"] ELEMENT: ");
+                arr[i][j]=ob.nextInt();
+            }
+        }
+        System.out.print("ENTER THE NUMBER TO BE FOUND: ");
+        int find=ob.nextInt();
+        boolean result=false;
+        for(int i=0;i<a;i++)
+        {
+            for(int j=0;j<b;j++)
+            {
+                if(arr[i][j]==find)
+                {
+                    result=true;
+                    break;
+                }
+            }
+        }
+        if(result==true)
+        {
+            System.out.println("PRESENT");
+        }
+        else
+        {
+            System.out.println("NOT PRESENT");
+        }
+
+    }
+}
