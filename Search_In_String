@@ -1,0 +1,34 @@
+//Search for a particular character in the string
+
+import java.util.*;
+class Search_In_String
+{
+    public static void main()
+    {
+        Scanner ob=new Scanner(System.in);
+        System.out.println("Enter the string");
+        String str=ob.next();
+        System.out.println("Enter the character to be found");
+        char c=ob.next().charAt(0);
+        boolean result=search(str,c);
+        if(result==false)
+        {
+            System.out.println("DOESN'T EXIST IN THE STRING");
+        }
+        else
+        {
+            System.out.println("PRESENT IN THE STRING");
+        }
+    }
+    public static boolean search(String str,char c)
+    {
+        for(int i=0;i<str.length();i++)
+        {
+            if(str.charAt(i)==c)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+}
