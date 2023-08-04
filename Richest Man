@@ -1,0 +1,45 @@
+//To find the richest person among a given number of people with their money stored in different banks. 
+
+import java.util.*;
+class Richest_Man
+{
+    public static void main()
+    {
+        Scanner ob=new Scanner(System.in);
+        System.out.println("Enter the number of people.");
+        int n=ob.nextInt();
+        System.out.println("Enter the number of banks.");
+        int m=ob.nextInt();
+        int arr[][]=new int[n][m];
+        System.out.println("ENTER THE DETAILS: ");
+        for(int i=0;i<n;i++)
+        {
+            for(int j=0;j<m;j++)
+            {
+                System.out.print("ENTER THE AMOUNT OF MONEY PERSON "+(i+1)+"HAS IN BANK "+(j+1)+":");
+                arr[i][j]=ob.nextInt();
+            }
+        }
+        rich(arr,n,m);
+    }
+    public static void rich(int arr[][],int n,int m)
+    {
+        int amount=0;
+        int c=0;
+        int max=Integer.MIN_VALUE;;
+        for(int i=0;i<n;i++)
+        {
+            for(int j=0;j<m;j++)
+            {
+                amount=amount+arr[i][j];
+            }
+            if(amount>max)
+            {
+                max=amount;
+                c=i;
+            }
+            amount=0;
+        }
+        System.out.println("THE RICHEST MAN IS PERSON "+(c+1));
+    }
+}
